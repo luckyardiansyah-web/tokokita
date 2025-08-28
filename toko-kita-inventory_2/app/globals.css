@@ -1,0 +1,144 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens to match Toko Kita design brief with orange primary theme */
+  --background: oklch(1 0 0); /* pure white */
+  --foreground: oklch(0.35 0 0); /* dark gray #4b5563 equivalent */
+  --card: oklch(0.99 0.02 85); /* light cream #fffbeb equivalent */
+  --card-foreground: oklch(0.35 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.35 0 0);
+  --primary: oklch(0.65 0.18 45); /* orange-600 #ea580c equivalent */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.7 0.16 40); /* orange-500 #f97316 equivalent */
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.98 0.03 90); /* very light cream #fefce8 equivalent */
+  --muted-foreground: oklch(0.35 0 0);
+  --accent: oklch(0.7 0.16 40); /* orange-500 #f97316 equivalent */
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.55 0.22 25); /* red-600 #dc2626 equivalent */
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.9 0 0); /* light gray #e5e7eb equivalent */
+  --input: oklch(1 0 0);
+  --ring: oklch(0.65 0.18 45 / 0.3); /* orange ring with transparency */
+  /* Enhanced chart colors with more distinct and vibrant colors for better differentiation */
+  --chart-1: oklch(0.65 0.18 45); /* orange-600 for Sales */
+  --chart-2: oklch(0.55 0.22 25); /* red-600 for COGS/HPP */
+  --chart-3: oklch(0.45 0.15 120); /* green-700 for Profit */
+  --chart-4: oklch(0.6 0.2 260); /* blue-600 for Profit Margin */
+  --chart-5: oklch(0.5 0.18 300); /* purple-600 for additional data */
+  --chart-6: oklch(0.55 0.2 180); /* teal-600 */
+  --chart-7: oklch(0.6 0.15 60); /* yellow-600 */
+  --chart-8: oklch(0.5 0.25 340); /* pink-600 */
+  --chart-9: oklch(0.45 0.2 200); /* cyan-700 */
+  --chart-10: oklch(0.4 0.15 80); /* lime-800 */
+  --radius: 0.5rem;
+  --sidebar: oklch(0.98 0.03 90); /* light cream for sidebar */
+  --sidebar-foreground: oklch(0.35 0 0);
+  --sidebar-primary: oklch(0.65 0.18 45);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.7 0.16 40);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.9 0 0);
+  --sidebar-ring: oklch(0.65 0.18 45 / 0.3);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.7 0.16 40); /* lighter orange for dark mode */
+  --primary-foreground: oklch(0.145 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.7 0.16 40);
+  --accent-foreground: oklch(0.145 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.7 0.16 40 / 0.3);
+  /* Enhanced dark mode chart colors for better visibility and contrast */
+  --chart-1: oklch(0.7 0.16 40); /* lighter orange for Sales */
+  --chart-2: oklch(0.65 0.25 25); /* lighter red for COGS/HPP */
+  --chart-3: oklch(0.6 0.2 120); /* lighter green for Profit */
+  --chart-4: oklch(0.7 0.22 260); /* lighter blue for Profit Margin */
+  --chart-5: oklch(0.65 0.2 300); /* lighter purple */
+  --chart-6: oklch(0.65 0.22 180); /* lighter teal */
+  --chart-7: oklch(0.7 0.18 60); /* lighter yellow */
+  --chart-8: oklch(0.65 0.28 340); /* lighter pink */
+  --chart-9: oklch(0.6 0.22 200); /* lighter cyan */
+  --chart-10: oklch(0.55 0.18 80); /* lighter lime */
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.7 0.16 40);
+  --sidebar-primary-foreground: oklch(0.145 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.7 0.16 40 / 0.3);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  /* Added additional chart color variables for more product differentiation */
+  --color-chart-6: var(--chart-6);
+  --color-chart-7: var(--chart-7);
+  --color-chart-8: var(--chart-8);
+  --color-chart-9: var(--chart-9);
+  --color-chart-10: var(--chart-10);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
