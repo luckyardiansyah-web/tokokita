@@ -1,4 +1,5 @@
 Toko Kita Inventory
+
 Aplikasi manajemen stok & penjualan menggunakan Next.js 15, TypeScript, Supabase, dan Shadcn/UI.  
 Mendukung pencatatan stok dengan metode FIFO untuk menghitung COGS, pencatatan penjualan, serta laporan profit.
 
