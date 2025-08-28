@@ -19,8 +19,15 @@ Instalasi Run
    ```bash
    git clone https://github.com/username/toko-kita-inventory.git
    cd toko-kita-inventory
-2. pnpm install
-3. pnpm dev
+2. Copy environment variables
+   cp .env.example .env.local
+   - berikut isi .env.local:
+   NEXT_PUBLIC_SUPABASE_URL=https://fteqggzbbzunueqabdfy.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ0ZXFnZ3piYnp1bnVlcWFiZGZ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTYzMDExNTAsImV4cCI6MjA3MTg3NzE1MH0.-CBhqZGTePck_x6elcBU9yk6MV5mQRoe2vIPBPbsKEI
+   NEXT_PUBLIC_APP_URL=http://localhost:3000
+   NODE_ENV=development
+3. pnpm install
+4. pnpm dev
 
 Testing
 1. pnpm test
